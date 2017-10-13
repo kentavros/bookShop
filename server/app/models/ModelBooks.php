@@ -15,24 +15,23 @@ class ModelBooks extends ModelDB
 
     public function filteredBooks($data)
     {
-//        dump($data);
-//        exit();
-        $arrBooks = [];
-        $totalArray = [];
-        foreach ($data as $key => $val) {
-//            dump($data[$key]);
-            if ($arrBooks[$key]['id'] == $val['id'])
-                {
-                    continue;
-                }
-                else {
-                    array_push($arrBooks, $val);
-                    echo '1';
-                }
-//
+      // dump($data);
+       $arrTest = [];
+      // foreach($data as $key => $val)
+      // {
+            
+      // }
+
+
+        foreach($data as $key => $val)
+        {
+            if (!isset($arrTest[$val['id']]))
+            {
+                $arrTest[$val['id']] = $val;
+            }
 
         }
-        dump($arrBooks);
+       dump($arrTest);
         exit();
     }
 }

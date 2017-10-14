@@ -2,7 +2,7 @@
 class ModelBooks extends ModelDB
 {
     /**
-     * Get All books or book by param - id
+     * Get All books or book by param - id, price etc/
      * @param bool $param
      * @return array
      */
@@ -10,6 +10,10 @@ class ModelBooks extends ModelDB
     {
         $sql = 'SELECT b.id as id,'
             .' b.title,'
+            .' b.price,'
+            .' b.description,'
+            .' b.discount,'
+            .' b.img,'
             .' a.id as a_id,'
             .' a.name as a_name,'
             .' g.id as g_id,'
@@ -64,6 +68,7 @@ class ModelBooks extends ModelDB
             {
                 $arr[$val['id']]['authors'][] = ['id'=>$val['a_id'], 'name'=>$val['a_name']];
                 $arr[$val['id']]['genres'][] = ['id'=>$val['g_id'], 'name'=>$val['g_name']];
+                unset($arr[$val['id']]['a_id'], $arr[$val['id']]['a_name'], $arr[$val['id']]['g_id'], $arr[$val['id']]['g_name']);
             }
             //Remove duplicate elements of a multidimensional array
             $arr[$val['id']]['authors'] = array_map("unserialize", array_unique(array_map("serialize", $arr[$val['id']]['authors'])));

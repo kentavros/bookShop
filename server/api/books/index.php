@@ -21,6 +21,12 @@ class Books extends RestServer
     {
         try
         {
+            if ($param !== false)
+            {
+                $result = $this->model->getBooks($param);
+                $result = $this->encodedData($result);
+                return $this->response->serverSuccess(200, $result);
+            }
             $result = $this->model->getBooks();
             $result = $this->encodedData($result);
             return $this->response->serverSuccess(200, $result);

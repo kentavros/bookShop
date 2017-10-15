@@ -46,7 +46,6 @@ class RestServer
         }
         else
         {
-            header('Access-Control-Allow-Origin: *');
             header("HTTP/1.0 405 Method Not Allowed");
             echo $this->class.'ERROR';
 //            var_dump($this->data);
@@ -76,10 +75,10 @@ class RestServer
             preg_match('#(\.[a-z]+)#', $data, $match);
             if (!empty($match[0]))
             {
-                 $this->encode = $match[0];
+                $this->encode = $match[0];
+                $data = trim($data, $this->encode);
             }
             //Cut extension
-            $data = trim($data, $this->encode);
             $data = explode('/', $data);
             if (count($data) % 2) {
                 //NE4etnoe
@@ -96,7 +95,7 @@ class RestServer
                 $arrOdd = [];
                 foreach ($data as $key => $val) {
                     if ($key % 2) {
-                        $arrOdd[] = $val;
+                        $arrOdd[] = urldecode($val);
                     } else {
                         $arrEven[] = $val;
                     }

@@ -12,7 +12,7 @@ class ModelDB
         }
     }
 
-    public function selectQuery($sql)
+    protected function selectQuery($sql)
     {
         $sth = $this->pdo->prepare($sql);
         $result = $sth->execute();
@@ -28,7 +28,7 @@ class ModelDB
         return $data;
     }
 
-    public function insertQuery($sql)
+    protected function insertUpdateQuery($sql)
     {
         $count = $this->pdo->exec($sql);
         if ($count === false)

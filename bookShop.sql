@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 15 2017 г., 19:51
+-- Время создания: Окт 16 2017 г., 12:37
 -- Версия сервера: 5.5.53
 -- Версия PHP: 5.5.38
 
@@ -149,20 +149,20 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `client`
+-- Структура таблицы `clients`
 --
 
-CREATE TABLE `client` (
+CREATE TABLE `clients` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `login` varchar(11) NOT NULL,
   `pass` varchar(255) NOT NULL,
-  `discount` decimal(7,0) NOT NULL,
-  `hash` varchar(255) NOT NULL,
+  `discount` decimal(7,2) NOT NULL,
+  `hash` varchar(255) NOT NULL DEFAULT 'first_hash',
   `role` enum('admin','user') NOT NULL DEFAULT 'user',
   `active` enum('yes','no') NOT NULL DEFAULT 'yes'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -287,10 +287,11 @@ ALTER TABLE `cart`
   ADD KEY `cart_fk1` (`id_client`);
 
 --
--- Индексы таблицы `client`
+-- Индексы таблицы `clients`
 --
-ALTER TABLE `client`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `login` (`login`);
 
 --
 -- Индексы таблицы `genres`
@@ -346,9 +347,9 @@ ALTER TABLE `books`
 ALTER TABLE `cart`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT для таблицы `client`
+-- AUTO_INCREMENT для таблицы `clients`
 --
-ALTER TABLE `client`
+ALTER TABLE `clients`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `genres`
@@ -398,13 +399,13 @@ ALTER TABLE `book_to_genre`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_fk0` FOREIGN KEY (`id_book`) REFERENCES `books` (`id`),
-  ADD CONSTRAINT `cart_fk1` FOREIGN KEY (`id_client`) REFERENCES `client` (`id`);
+  ADD CONSTRAINT `cart_fk1` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_fk0` FOREIGN KEY (`id_client`) REFERENCES `client` (`id`),
+  ADD CONSTRAINT `orders_fk0` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id`),
   ADD CONSTRAINT `orders_fk1` FOREIGN KEY (`id_payment`) REFERENCES `payment` (`id`);
 
 --

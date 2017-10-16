@@ -8,7 +8,7 @@ class ModelDB
         $this->pdo = new PDO(DSN_MY, USER_NAME, PASS);
         if(!$this->pdo)
         {
-            throw new PDOException(ERR_DB);
+            throw new Exception(ERR_DB);
         }
     }
 
@@ -18,7 +18,7 @@ class ModelDB
         $result = $sth->execute();
         if (false === $result)
         {
-            throw new PDOException(ERR_QUERY);
+            throw new Exception(ERR_QUERY);
         }
         $data = $sth->fetchAll(PDO::FETCH_ASSOC);
         if (empty($data))
@@ -26,5 +26,15 @@ class ModelDB
             return ERR_SEARCH;
         }
         return $data;
+    }
+
+    public function insertQuery($sql)
+    {
+        $count = $this->pdo->exec($sql);
+        if ($count === false)
+        {
+            return false;
+        }
+        return $count;
     }
 }

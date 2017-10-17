@@ -45,7 +45,19 @@ class Cart extends RestServer
         }
     }
 
-
+    public function putCart($param)
+    {
+        try
+        {
+            $result = $this->model->updateCart($param);
+            $result = $this->encodedData($result);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+             return $this->response->serverError(500, $exception->getMessage());
+        }
+    }
 //    public function getBooks($param=false)
 //    {
 //        try

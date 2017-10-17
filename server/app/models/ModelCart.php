@@ -21,7 +21,13 @@ class ModelCart extends ModelDB
         $data = $this->selectQuery($sql);
         return $data;
     }
+    
 
+    public function updateCart($param)
+    {
+        dump($param);
+        exit();   
+    }
 
     public function addToCart($param)
     {

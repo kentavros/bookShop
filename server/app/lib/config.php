@@ -27,6 +27,7 @@ define('ERR_LOGIN_LEN', 'Login must be at least 3 characters and not more than 3
 define('ERR_AUTH', 'Error, check password and login');
 define('NO_ACTIVE', 'Your account has been deactivated, contact the site administration!');
 define('ERR_COUNT', 'You did not specify the count of the desired book!');
+define('ERR_DATA', 'Error, Missing data!');
 //
 ///**
 // * Success

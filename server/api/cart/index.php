@@ -17,6 +17,21 @@ class Cart extends RestServer
         $this->run();
     }
 
+    public function getCart($param)
+    {
+        try
+        {
+            $result = $this->model->getBooksByIdClient($param);
+            $result = $this->encodedData($result);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
+    }
+
+
     public function postCart($param)
     {
         try

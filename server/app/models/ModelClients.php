@@ -4,7 +4,7 @@ class ModelClients extends ModelDB
     public function checkClients($param)
     {
             $id = $this->pdo->quote(($param['id']));
-            $sql = "SELECT hash, role FROM clients WHERE id=".$id;
+            $sql = "SELECT hash, role, discount FROM clients WHERE id=".$id;
             $data = $this->selectQuery($sql);
             return $data;
     }

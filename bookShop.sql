@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 18 2017 г., 12:33
+-- Время создания: Окт 18 2017 г., 18:02
 -- Версия сервера: 5.5.53
 -- Версия PHP: 5.5.38
 
@@ -151,8 +151,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `id_book`, `id_client`, `count`) VALUES
-(2, 4, 15, 3),
-(30, 8, 1, 7);
+(2, 4, 15, 3);
 
 -- --------------------------------------------------------
 
@@ -177,7 +176,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `first_name`, `last_name`, `login`, `pass`, `discount`, `hash`, `role`, `active`) VALUES
-(1, 'Бронислав', 'aaaa', 'aaaa', '2f7b52aacfbf6f44e13d27656ecb1f59', '10.00', 'a2cd35576d78a8f84de732649ec2fc01', 'user', 'yes'),
+(1, 'Бронислав', 'aaaa', 'aaaa', '2f7b52aacfbf6f44e13d27656ecb1f59', '10.00', '52a45d1488bba42567899dbd67f6f1e5', 'user', 'yes'),
 (13, 'Василий', 'Бутаперцев', 'vasia', 'ec6a6536ca304edf844d1d248a4f08dc', '0.00', 'ae8969467b0cc30d43996fb481fca56d', 'user', 'no'),
 (15, 'Рутище', 'СуперПупер', 'admin', 'c3284d0f94606de1fd2af172aba15bf3', '0.00', '43756d75fe9bbaa226cb407caeab6da7', 'admin', 'yes');
 
@@ -230,11 +229,23 @@ CREATE TABLE `history_book` (
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `id_client` int(11) NOT NULL,
+  `discount_client` decimal(10,0) NOT NULL DEFAULT '0',
   `status` enum('processed','sent') NOT NULL DEFAULT 'processed',
   `id_payment` int(11) NOT NULL,
-  `date_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `total_price` decimal(7,2) NOT NULL
+  `total_discount` decimal(7,2) NOT NULL,
+  `total_price` decimal(7,2) NOT NULL,
+  `date_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `id_client`, `discount_client`, `status`, `id_payment`, `total_discount`, `total_price`, `date_time`) VALUES
+(57, 1, '10', 'processed', 8, '6.47', '17.54', '2017-10-18 13:32:00'),
+(59, 1, '10', 'processed', 4, '21.56', '153.27', '2017-10-18 13:54:13'),
+(60, 1, '10', 'processed', 5, '6.47', '17.54', '2017-10-18 14:05:33'),
+(61, 1, '10', 'processed', 8, '1.88', '11.07', '2017-10-18 14:06:02');
 
 -- --------------------------------------------------------
 
@@ -249,10 +260,22 @@ CREATE TABLE `orders_full_info` (
   `title_book` varchar(255) NOT NULL,
   `count` int(11) NOT NULL,
   `price` decimal(7,2) NOT NULL,
-  `discount_book` decimal(7,2) NOT NULL,
-  `discount_client` decimal(7,2) NOT NULL,
-  `date_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `discount_book` decimal(7,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `orders_full_info`
+--
+
+INSERT INTO `orders_full_info` (`id`, `id_order`, `id_book`, `title_book`, `count`, `price`, `discount_book`) VALUES
+(15, 57, 1, 'Ivy and the Inky Butterfly', 1, '12.95', '5.00'),
+(16, 57, 2, 'The Sun and Her Flowers', 1, '11.06', '35.00'),
+(17, 59, 6, 'Tin Man', 4, '11.31', '0.00'),
+(18, 59, 8, 'The Very Hungry', 6, '6.49', '0.00'),
+(19, 59, 1, 'Ivy and the Inky Butterfly', 7, '12.95', '5.00'),
+(20, 60, 1, 'Ivy and the Inky Butterfly', 1, '12.95', '5.00'),
+(21, 60, 2, 'The Sun and Her Flowers', 1, '11.06', '35.00'),
+(22, 61, 1, 'Ivy and the Inky Butterfly', 1, '12.95', '5.00');
 
 -- --------------------------------------------------------
 
@@ -376,7 +399,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `clients`
 --
@@ -396,12 +419,12 @@ ALTER TABLE `history_book`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 --
 -- AUTO_INCREMENT для таблицы `orders_full_info`
 --
 ALTER TABLE `orders_full_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT для таблицы `payment`
 --

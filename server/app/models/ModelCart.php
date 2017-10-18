@@ -25,8 +25,30 @@ class ModelCart extends ModelDB
 
     public function updateCart($param)
     {
-        dump($param);
-        exit();   
+        $idClient = array_shift($param);
+        $idClient = $idClient['id_client'];
+        if (!is_array($param))
+        {
+            return false;
+        }
+
+        foreach ($param as $book)
+        {
+            if ($book['checked'] === false)
+            {
+                $idBook = $this->pdo->quote($book['id']);
+                $sql = "DELETE FROM cart WHERE id_book=".$idBook." AND id_client=".$idClient;
+                $this->execQuery($sql);
+            }
+            else if ($book['checked'] === true)
+            {
+                $count = $this->pdo->quote($book['count']);
+                $idBook = $this->pdo->quote($book['id']);
+                $sql = "UPDATE cart SET count=".$count." WHERE id_book=".$idBook." AND id_client=".$idClient;
+                $count = $this->execQuery($sql);
+            }
+        }
+        return UPDATE;
     }
 
     public function addToCart($param)
@@ -43,7 +65,7 @@ class ModelCart extends ModelDB
         if (!is_array($data))
         {
             $sql = "INSERT INTO cart (id_book, id_client, count) VALUES (".$idBook.", ".$idClient.", ".$count.")";
-            $result = $this->insertUpdateQuery($sql);
+            $result = $this->execQuery($sql);
             return $result;
         }
         else
@@ -52,8 +74,20 @@ class ModelCart extends ModelDB
             $resCount = (int)$data[0]['count']+(int)$count;
             $count = $this->pdo->quote($resCount);
             $sql = "UPDATE cart SET count=".$count." WHERE id_book=".$idBook." AND id_client=".$idClient;
-            $result = $this->insertUpdateQuery($sql);
+            $result = $this->execQuery($sql);
             return $result;
         }
+    }
+
+    public function clearCart($param)
+    {
+        if (!$param['id'])
+        {
+            return ERR_DATA;
+        }
+        $idClient = $this->pdo->quote($param['id']);
+        $sql = "DELETE FROM cart WHERE id_client=".$idClient;
+        $result = $this->execQuery($sql);
+        return $result;
     }
 }

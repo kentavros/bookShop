@@ -58,25 +58,18 @@ class Cart extends RestServer
              return $this->response->serverError(500, $exception->getMessage());
         }
     }
-//    public function getBooks($param=false)
-//    {
-//        try
-//        {
-//            if ($param !== false)
-//            {
-//                $result = $this->model->getBooks($param);
-//                $result = $this->encodedData($result);
-//                return $this->response->serverSuccess(200, $result);
-//            }
-//            $result = $this->model->getBooks();
-//            $result = $this->encodedData($result);
-//            return $this->response->serverSuccess(200, $result);
-//        }
-//        catch(Exception $exception)
-//        {
-//            return $this->response->serverError(500, $exception->getMessage());
-//        }
-//
-//    }
+
+    public function deleteCart($param)
+    {
+        try
+        {
+            $result = $this->model->clearCart($param);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
+    }
 }
 $books = new Cart();

@@ -28,7 +28,7 @@ class ModelDB
         return $data;
     }
 
-    protected function insertUpdateQuery($sql)
+    protected function execQuery($sql)
     {
         $count = $this->pdo->exec($sql);
         if ($count === false)

@@ -30,7 +30,7 @@ class ModelClients extends ModelDB
         $pass = md5(md5(trim($_POST['pass'])));
         $pass = $this->pdo->quote($pass);
         $sql = "INSERT INTO clients (first_name, last_name, login, pass) VALUES (".$firstName.", ".$lastName.", ".$login.", ".$pass.")";
-        $result = $this->insertUpdateQuery($sql);
+        $result = $this->execQuery($sql);
         if ($result === false)
         {
             return ERR_LOGIN;
@@ -68,7 +68,7 @@ class ModelClients extends ModelDB
         }
         $hash = $this->pdo->quote(md5($this->generateHash(10)));
         $sql = "UPDATE clients SET hash=".$hash." WHERE id=".$id;
-        $count = $this->insertUpdateQuery($sql);
+        $count = $this->execQuery($sql);
         if ($count === false)
         {
             return ERR_QUERY;

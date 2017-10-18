@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 17 2017 г., 16:26
+-- Время создания: Окт 18 2017 г., 12:33
 -- Версия сервера: 5.5.53
 -- Версия PHP: 5.5.38
 
@@ -152,10 +152,7 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`id`, `id_book`, `id_client`, `count`) VALUES
 (2, 4, 15, 3),
-(9, 6, 1, 5),
-(15, 5, 1, 9),
-(16, 1, 1, 2),
-(17, 2, 1, 4);
+(30, 8, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -180,7 +177,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `first_name`, `last_name`, `login`, `pass`, `discount`, `hash`, `role`, `active`) VALUES
-(1, 'aaaa', 'aaaa', 'aaaa', '2f7b52aacfbf6f44e13d27656ecb1f59', '10.00', '5eb65dac9c8228df15ac5fd0904f8301', 'user', 'yes'),
+(1, 'Бронислав', 'aaaa', 'aaaa', '2f7b52aacfbf6f44e13d27656ecb1f59', '10.00', 'a2cd35576d78a8f84de732649ec2fc01', 'user', 'yes'),
 (13, 'Василий', 'Бутаперцев', 'vasia', 'ec6a6536ca304edf844d1d248a4f08dc', '0.00', 'ae8969467b0cc30d43996fb481fca56d', 'user', 'no'),
 (15, 'Рутище', 'СуперПупер', 'admin', 'c3284d0f94606de1fd2af172aba15bf3', '0.00', '43756d75fe9bbaa226cb407caeab6da7', 'admin', 'yes');
 
@@ -235,8 +232,8 @@ CREATE TABLE `orders` (
   `id_client` int(11) NOT NULL,
   `status` enum('processed','sent') NOT NULL DEFAULT 'processed',
   `id_payment` int(11) NOT NULL,
-  `date_time` datetime NOT NULL,
-  `total_price` decimal(7,0) NOT NULL
+  `date_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `total_price` decimal(7,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -251,10 +248,10 @@ CREATE TABLE `orders_full_info` (
   `id_book` int(11) NOT NULL,
   `title_book` varchar(255) NOT NULL,
   `count` int(11) NOT NULL,
-  `price` decimal(7,0) NOT NULL,
-  `discount_book` decimal(7,0) NOT NULL,
-  `discount_client` decimal(7,0) NOT NULL,
-  `date_time` datetime NOT NULL
+  `price` decimal(7,2) NOT NULL,
+  `discount_book` decimal(7,2) NOT NULL,
+  `discount_client` decimal(7,2) NOT NULL,
+  `date_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -267,6 +264,20 @@ CREATE TABLE `payment` (
   `id` int(11) NOT NULL,
   `name` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `payment`
+--
+
+INSERT INTO `payment` (`id`, `name`) VALUES
+(1, 'PayPal'),
+(2, 'RBK Money'),
+(3, 'Yandex Money'),
+(4, 'LiqPay'),
+(5, 'Ukash'),
+(6, 'EasyPay'),
+(7, 'AlertPay'),
+(8, 'QIWI');
 
 --
 -- Индексы сохранённых таблиц
@@ -365,7 +376,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT для таблицы `clients`
 --
@@ -385,7 +396,7 @@ ALTER TABLE `history_book`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `orders_full_info`
 --
@@ -395,7 +406,7 @@ ALTER TABLE `orders_full_info`
 -- AUTO_INCREMENT для таблицы `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

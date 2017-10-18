@@ -154,7 +154,7 @@ class RestServer
              {
                 if(is_numeric($key))
                 {
-                    $key = 'car'.$key;
+                    $key = 'book'.$key;
                 }
                 if(is_array($val))
                 {

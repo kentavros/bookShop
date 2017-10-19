@@ -3,7 +3,26 @@ class ModelOrdersfullinfo extends ModelDB
 {
     public function getOrdersfullinfo($param = false)
     {
-        return 'pust GET method';
+        $sql = 'SELECT id_book,'
+            .' title_book,'
+            .' count,'
+            .' price,'
+            .' discount_book'
+            .' FROM orders_full_info';
+        if ($param !== false)
+        {
+            if (is_array($param))
+            {
+                $sql .= " WHERE ";
+                foreach ($param as $key => $val)
+                {
+                    $sql .= $key.'='.$this->pdo->quote($val).' AND ';
+                }
+                $sql = substr($sql, 0, -5);
+            }
+        }
+        $data = $this->selectQuery($sql);
+        return $data;
     }
 
     public function addToOrdersfullinfo($param)

@@ -31,6 +31,11 @@ class ModelOrders extends ModelDB
                 }
                 $sql = substr($sql, 0, -5);
             }
+            $sql .= ' ORDER BY of.id_book';
+        }
+        else
+        {
+            $sql .= ' ORDER BY of.id_book';
         }
         $data = $this->selectQuery($sql);
         $result = $this->filteredOrders($data);
@@ -40,6 +45,10 @@ class ModelOrders extends ModelDB
     protected function filteredOrders($data)
     {
         $arr = [];
+        if (!is_array($data))
+        {
+            return $data;
+        }
         foreach ($data as $val)
         {
             if (!isset($arr[$val['id_order']]))

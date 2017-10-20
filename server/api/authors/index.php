@@ -35,7 +35,32 @@ class Authors extends RestServer
         {
             return $this->response->serverError(500, $exception->getMessage());
         }
+    }
 
+    public function postAuthors($param)
+    {
+        try
+        {
+            $result = $this->model->addAuthor($param);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
+    }
+
+    public function deleteAuthors($param)
+    {
+        try
+        {
+            $result = $this->model->deleteAuthor($param);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
     }
 }
 $books = new Authors();

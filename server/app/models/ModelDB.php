@@ -46,8 +46,6 @@ class ModelDB
             $id = $this->pdo->quote($param['id_client']);
             $sql = "SELECT role FROM clients WHERE id=".$id." AND hash=".$hash;
             $data = $this->selectQuery($sql);
-//            dump($data);
-//            exit();
             if (is_array($data))
             {
                 return $data[0]['role'];

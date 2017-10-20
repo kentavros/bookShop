@@ -4,50 +4,110 @@ class ModelBooks extends ModelDB
     /**
      * Get All books or book by param - id, price etc/
      * @param bool $param
-     * @return array
+     * @param $param['hash'] & $param['id_client'] & $param['id'] -book
+     * @return array|string
      */
     public function getBooks($param=false)
     {
-        $sql = 'SELECT b.id as id,'
-            .' b.title,'
-            .' b.price,'
-            .' b.description,'
-            .' b.discount,'
-            .' b.img,'
-            .' a.id as a_id,'
-            .' a.name as a_name,'
-            .' g.id as g_id,'
-            .' g.name as g_name'
-            .' FROM books b '
-            .' LEFT JOIN book_to_author ba'
-            .' ON b.id=ba.id_book'
-            .' LEFT JOIN authors a'
-            .' ON a.id=ba.id_author'
-            .' LEFT JOIN book_to_genre bg'
-            .' ON b.id=bg.id_book'
-            .' LEFT JOIN genres g'
-            .' ON bg.id_genre=g.id'
-            .' WHERE active="yes"';
-        if ($param !== false)
+        //check admin request or user request
+        if (!isset($param['hash']) && !isset($param['id_client']))
         {
-            if (is_array($param))
+            //User request
+            $sql = 'SELECT b.id as id,'
+                .' b.title,'
+                .' b.price,'
+                .' b.description,'
+                .' b.discount,'
+                .' b.img,'
+                .' a.id as a_id,'
+                .' a.name as a_name,'
+                .' g.id as g_id,'
+                .' g.name as g_name'
+                .' FROM books b '
+                .' LEFT JOIN book_to_author ba'
+                .' ON b.id=ba.id_book'
+                .' LEFT JOIN authors a'
+                .' ON a.id=ba.id_author'
+                .' LEFT JOIN book_to_genre bg'
+                .' ON b.id=bg.id_book'
+                .' LEFT JOIN genres g'
+                .' ON bg.id_genre=g.id'
+                .' WHERE active="yes"';
+            if ($param !== false)
             {
-                $sql .= " AND ";
-                foreach ($param as $key => $val)
+                if (is_array($param))
                 {
-                    $sql .= 'b.'.$key.'='.$this->pdo->quote($val).' AND ';
+                    $sql .= " AND ";
+                    foreach ($param as $key => $val)
+                    {
+                        $sql .= 'b.'.$key.'='.$this->pdo->quote($val).' AND ';
+                    }
+                    $sql = substr($sql, 0, -5);
                 }
-                $sql = substr($sql, 0, -5);
+                $sql .= ' ORDER BY b.id';
             }
-            $sql .= ' ORDER BY b.id';
+            else
+            {
+                $sql .= ' ORDER BY b.id';
+            }
+            $data = $this->selectQuery($sql);
+            $result = $this->filteredBooks($data);
+            return $result;
         }
         else
         {
-            $sql .= ' ORDER BY b.id';
+            //Admin request
+            if ($this->checkData($param) == 'admin')
+            {
+                unset($param['hash'], $param['id_client']);
+                $sql = 'SELECT b.id as id,'
+                    .' b.title,'
+                    .' b.price,'
+                    .' b.description,'
+                    .' b.discount,'
+                    .' b.active,'
+                    .' b.img,'
+                    .' a.id as a_id,'
+                    .' a.name as a_name,'
+                    .' g.id as g_id,'
+                    .' g.name as g_name'
+                    .' FROM books b '
+                    .' LEFT JOIN book_to_author ba'
+                    .' ON b.id=ba.id_book'
+                    .' LEFT JOIN authors a'
+                    .' ON a.id=ba.id_author'
+                    .' LEFT JOIN book_to_genre bg'
+                    .' ON b.id=bg.id_book'
+                    .' LEFT JOIN genres g'
+                    .' ON bg.id_genre=g.id';
+                if (!empty($param))
+                {
+                    if (is_array($param))
+                    {
+                        $sql .= " WHERE ";
+                        foreach ($param as $key => $val)
+                        {
+                            $sql .= 'b.'.$key.'='.$this->pdo->quote($val).' AND ';
+                        }
+                        $sql = substr($sql, 0, -5);
+                    }
+                    $sql .= ' ORDER BY b.id';
+                }
+                else
+                {
+                    $sql .= ' ORDER BY b.id';
+                }
+                $data = $this->selectQuery($sql);
+                $result = $this->filteredBooks($data);
+                return $result;
+            }
+            else
+            {
+                return ERR_ACCESS;
+            }
+
         }
-        $data = $this->selectQuery($sql);
-        $result = $this->filteredBooks($data);
-        return $result;
+
     }
 
     /**

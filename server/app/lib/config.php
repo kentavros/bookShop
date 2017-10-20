@@ -7,8 +7,8 @@ define('ENCODE_DEFAULT', '.json');
 /**
  * for Data Base MySQL
  */
-//define('DSN_MY', 'mysql:host=localhost;dbname=bookShop');
-define('DSN_MY', 'mysql:host=localhost;dbname=user6');
+define('DSN_MY', 'mysql:host=localhost;dbname=bookShop');
+//define('DSN_MY', 'mysql:host=localhost;dbname=user6');
 define('USER_NAME', 'user6');
 define('PASS', 'tuser6');
 
@@ -28,6 +28,7 @@ define('ERR_AUTH', 'Error, check password and login');
 define('NO_ACTIVE', 'Your account has been deactivated, contact the site administration!');
 define('ERR_COUNT', 'You did not specify the count of the desired book!');
 define('ERR_DATA', 'Error, Missing data!');
+define('ERR_ACCESS', 'Access denied!');
 
 /**
  * Success

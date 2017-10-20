@@ -37,4 +37,29 @@ class ModelDB
         }
         return $count;
     }
+
+    protected function checkData($param)
+    {
+        if (isset($param['hash']) && isset($param['id_client']))
+        {
+            $hash = $this->pdo->quote($param['hash']);
+            $id = $this->pdo->quote($param['id_client']);
+            $sql = "SELECT role FROM clients WHERE id=".$id." AND hash=".$hash;
+            $data = $this->selectQuery($sql);
+//            dump($data);
+//            exit();
+            if (is_array($data))
+            {
+                return $data[0]['role'];
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

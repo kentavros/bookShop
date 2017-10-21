@@ -82,8 +82,48 @@ class ModelClients extends ModelDB
 
     public function editClients($param)
     {
-        dump($param);
-        exit();
+        if ($this->checkData($param) == 'admin')
+        {
+
+            if (filter_var($param['discount'], FILTER_VALIDATE_INT) || filter_var($param['discount'],FILTER_VALIDATE_FLOAT)
+            || $param['discount'] === '0' || $param['discount'] === '0.00')
+            {
+                $discount = $this->pdo->quote($param['discount']);
+            }
+            else
+            {
+                return ERR_DISC;
+            }
+            $id = $this->pdo->quote($param['id']);
+            $firstName = $this->pdo->quote($param['first_name']);
+            $lastName = $this->pdo->quote($param['last_name']);
+            $role = $this->pdo->quote($param['role']);
+            $active = $this->pdo->quote($param['active']);
+            $sql = 'UPDATE clients SET'
+                .' first_name='.$firstName.','
+                .' last_name='.$lastName.','
+                .' discount='.$discount.','
+                .' role='.$role.','
+                .' active='.$active;
+            if(isset($param['pass']))
+            {
+                $pass = md5(md5(trim($param['pass'])));
+                $pass = $this->pdo->quote($pass);
+                $sql .=', pass='.$pass;
+            }
+//            exit();
+            $sql .=' WHERE id='.$id;
+//            dump($sql);
+//            dump($pass);
+            $data = $this->execQuery($sql);
+//            dump($data);
+//            exit();
+            return $data;
+        }
+        else
+        {
+            return ERR_ACCESS;
+        }
     }
 
     public function loginClient($param)

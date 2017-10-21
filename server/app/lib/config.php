@@ -30,6 +30,7 @@ define('ERR_COUNT', 'You did not specify the count of the desired book!');
 define('ERR_DATA', 'Error, Missing data!');
 define('ERR_ACCESS', 'Access denied!');
 define('AUTHOR_EXIST', 'Author exists!');
+define('ERR_DISC', 'Field "discount" should be float or integer');
 
 /**
  * Success

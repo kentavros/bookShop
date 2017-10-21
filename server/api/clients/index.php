@@ -54,9 +54,7 @@ class Clients extends RestServer
     {
         try
         {
-//            dump($param);
-//            exit();
-            if (isset($param['hash']) && isset($param['id_user']))
+            if (isset($param['hash']) && isset($param['id_client']))
             {
                 $result = $this->model->editClients($param);
                 $result = $this->encodedData($result);

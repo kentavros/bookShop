@@ -82,8 +82,6 @@ class ModelBooks extends ModelDB
                     .' ON bg.id_genre=g.id';
                 if (!empty($param))
                 {
-                    //dump($param);
-                   // exit();
                     if (is_array($param))
                     {
                         $sql .= " WHERE ";

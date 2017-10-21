@@ -46,35 +46,48 @@ class ModelAuthors extends ModelDB
         }
     }
 
+    public function editAuthor($param)
+    {
+        if (isset($param['hash']) && isset($param['id_client']))
+        {
+            if ($this->checkData($param) == 'admin')
+            {
+                if (isset($param['id']) && isset($param['name']))
+                {
+                    $id = $this->pdo->quote($param['id']);
+                    $name = $this->pdo->quote($param['name']);
+                    $sql = "UPDATE authors SET name=".$name." WHERE id=".$id;
+                    $result = $this->execQuery($sql);
+                    return $result;
+                }
+            }
+        }
+        else
+        {
+            return ERR_ACCESS;
+        }
+    }
+
     public function deleteAuthor($param)
     {
-//        dump($param);
-//        exit();
         if (isset($param['hash']) && isset($param['id_client']))
         {
             if ($this->checkData($param) == 'admin')
             {
                 unset($param['hash'], $param['id_client']);
-                //dump($param);
-                //exit();
-
-                if($param['id'])
+                if ($param['id'])
                 {
-                   // dump($param);
-                   // exit();
                     $id = $this->pdo->quote($param['id']);
                     $sql = "DELETE FROM book_to_author WHERE id_author=".$id;
-                    $result = $this->execQuery($sql);
+                    $this->execQuery($sql);
                     $sql = "DELETE FROM authors WHERE id=".$id;
                     $result = $this->execQuery($sql);
                     return $result;
                 }
                 else
                 {
-                    dump($param);
-                  exit();  
+                    return false;
                 }
-                
             }
         }
         else

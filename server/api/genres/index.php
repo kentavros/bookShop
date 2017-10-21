@@ -8,7 +8,7 @@ class Genres extends RestServer
     /**
      * create obj - model & response
      * parent run method
-     * Authors constructor.
+     * Genres constructor.
      */
     public function __construct()
     {
@@ -35,7 +35,46 @@ class Genres extends RestServer
         {
             return $this->response->serverError(500, $exception->getMessage());
         }
+    }
 
+    public function postGenres($param)
+    {
+        try
+        {
+            $result = $this->model->addGenre($param);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
+    }
+
+    public function putGenres($param)
+    {
+        try
+        {
+            $result = $this->model->editGenres($param);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
+
+    }
+
+    public function deleteGenres($param)
+    {
+        try
+        {
+            $result = $this->model->deleteGenre($param);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
     }
 }
 $books = new Genres();

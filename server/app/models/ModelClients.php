@@ -1,6 +1,48 @@
 <?php
 class ModelClients extends ModelDB
 {
+    public function getClients($param)
+    {
+
+        if ($this->checkData($param) == 'admin')
+        {
+            unset($param['hash'], $param['id_client']);
+            $sql = 'SELECT'
+                .' id,'
+                .' first_name,'
+                .' last_name,'
+                .' login,'
+                .' discount,'
+                .' role,'
+                .' active'
+                .' FROM clients';
+
+            if (!empty($param))
+            {
+                if (is_array($param))
+                {
+                    $sql .= " WHERE ";
+                    foreach ($param as $key => $val)
+                    {
+                        $sql .= $key.'='.$this->pdo->quote($val).' AND ';
+                    }
+                    $sql = substr($sql, 0, -5);
+                }
+                $sql .= ' ORDER BY id';
+            }
+            else
+            {
+                $sql .= ' ORDER BY id';
+            }
+            $data = $this->selectQuery($sql);
+            return $data;
+        }
+        else
+        {
+            return ERR_ACCESS;
+        }
+    }
+
     public function checkClients($param)
     {
             $id = $this->pdo->quote(($param['id']));
@@ -36,6 +78,12 @@ class ModelClients extends ModelDB
             return ERR_LOGIN;
         }
         return $result;
+    }
+
+    public function editClients($param)
+    {
+        dump($param);
+        exit();
     }
 
     public function loginClient($param)

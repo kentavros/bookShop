@@ -21,6 +21,12 @@ class Clients extends RestServer
     {
         try
         {
+            if (isset($param['hash']) && isset($param['id_client']))
+            {
+                $result = $this->model->getClients($param);
+                $result = $this->encodedData($result);
+                return $this->response->serverSuccess(200, $result);
+            }
             $result = $this->model->checkClients($param);
             $result = $this->encodedData($result);
             return $this->response->serverSuccess(200, $result);
@@ -48,6 +54,14 @@ class Clients extends RestServer
     {
         try
         {
+//            dump($param);
+//            exit();
+            if (isset($param['hash']) && isset($param['id_user']))
+            {
+                $result = $this->model->editClients($param);
+                $result = $this->encodedData($result);
+                return $this->response->serverSuccess(200, $result);
+            }
             $result = $this->model->loginClient($param);
             $result = $this->encodedData($result);
             return $this->response->serverSuccess(200, $result);

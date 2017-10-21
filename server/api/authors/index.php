@@ -50,6 +50,20 @@ class Authors extends RestServer
         }
     }
 
+    public function putAuthors($param)
+    {
+        try
+        {
+            $result = $this->model->editAuthor($param);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
+
+    }
+
     public function deleteAuthors($param)
     {
         try

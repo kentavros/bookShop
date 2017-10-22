@@ -17,11 +17,43 @@ class Booktogenre extends RestServer
         $this->run();
     }
 
+    public function getBooktogenre($param=false){
+        try
+        {
+            if ($param !== false)
+            {
+                $result = $this->model->getIds($param);
+                $result = $this->encodedData($result);
+                return $this->response->serverSuccess(200, $result);
+            }
+            $result = $this->model->getIds();
+            $result = $this->encodedData($result);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch(Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
+    }
+
     public function postBooktogenre($param)
     {
         try
         {
             $result = $this->model->addBookToGenre($param);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
+    }
+
+    public function deleteBooktogenre($param)
+    {
+        try
+        {
+            $result = $this->model->deleteById($param);
             return $this->response->serverSuccess(200, $result);
         }
         catch (Exception $exception)

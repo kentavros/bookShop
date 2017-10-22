@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="287100e8-e430-42c3-8155-5fbb6c666d54" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/api/booktoauthor/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/api/booktoauthor/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/api/booktogenre/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/api/booktogenre/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/api/historybook/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/api/historybook/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/app/models/ModelBooktoauthor.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/app/models/ModelBooktogenre.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/app/models/ModelHistorybook.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookShop.sql" afterPath="$PROJECT_DIR$/bookShop.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/api/books/index.php" afterPath="$PROJECT_DIR$/server/api/books/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/api/booktoauthor/index.php" afterPath="$PROJECT_DIR$/server/api/booktoauthor/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/api/booktogenre/index.php" afterPath="$PROJECT_DIR$/server/api/booktogenre/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/app/models/ModelBooks.php" afterPath="$PROJECT_DIR$/server/app/models/ModelBooks.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/app/models/ModelBooktoauthor.php" afterPath="$PROJECT_DIR$/server/app/models/ModelBooktoauthor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/app/models/ModelBooktogenre.php" afterPath="$PROJECT_DIR$/server/app/models/ModelBooktogenre.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,58 +31,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ModelDB.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/app/models/ModelDB.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/api/booktoauthor/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+            <state relative-caret-position="206">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelBooktoauthor.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/app/models/ModelBooktoauthor.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
               <folding>
-                <marker date="1508503161856" expanded="true" signature="1052:1086" ph="SELECT role clients" />
-                <marker date="1508503161856" expanded="true" signature="1052:1103" ph="SELECT role clients" />
+                <marker date="1508692260218" expanded="true" signature="111:156" ph="SELECT id_bo... book_to_author" />
+                <marker date="1508692260218" expanded="true" signature="924:950" ph="INSERT INTO book_to_author... " />
+                <marker date="1508692260218" expanded="true" signature="924:976" ph="INSERT INTO book_to_author... " />
+                <marker date="1508692260218" expanded="true" signature="924:1067" ph="INSERT INTO book_to_author... " />
+                <marker date="1508692260218" expanded="true" signature="924:1076" ph="INSERT INTO book_to_author... " />
+                <marker date="1508692260218" expanded="true" signature="924:1109" ph="INSERT INTO book_to_author... " />
+                <marker date="1508692260218" expanded="true" signature="924:1110" ph="INSERT INTO book_to_author... " />
+                <marker date="1508692260218" expanded="true" signature="924:1111" ph="INSERT INTO book_to_author... " />
+                <marker date="1508692260218" expanded="true" signature="924:1144" ph="INSERT INTO book_to_author... " />
+                <marker date="1508692260218" expanded="true" signature="924:1145" ph="INSERT INTO book_to_author... " />
+                <marker date="1508692260218" expanded="true" signature="924:1146" ph="INSERT INTO book_to_author... " />
+                <marker date="1508692260218" expanded="true" signature="1783:1824" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelBooks.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/app/models/ModelBooks.php">
+      <file leaf-file-name="ModelBooktogenre.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/app/models/ModelBooktogenre.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="215" column="28" lean-forward="false" selection-start-line="215" selection-start-column="28" selection-end-line="215" selection-end-column="28" />
+            <state relative-caret-position="189">
+              <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
               <folding>
-                <marker date="1508677582532" expanded="true" signature="6789:6806" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:6832" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7047" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7049" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7058" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7081" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7090" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7091" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7092" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7123" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7124" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7125" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7162" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7163" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7164" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7198" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7199" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7200" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7232" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7233" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7234" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7263" ph="INSERT INTO books... " />
-                <marker date="1508677582532" expanded="true" signature="6789:7264" ph="INSERT INTO books... " />
+                <marker date="1508691014047" expanded="true" signature="110:153" ph="SELECT id_bo... book_to_genre" />
+                <marker date="1508691014047" expanded="true" signature="918:1136" ph="INSERT INTO book_to_gener... " />
+                <marker date="1508691014047" expanded="true" signature="1774:1814" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/api/books/index.php">
+        <entry file="file://$PROJECT_DIR$/server/api/booktogenre/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="60" column="36" lean-forward="true" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+            <state relative-caret-position="257">
+              <caret line="51" column="45" lean-forward="true" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -99,8 +91,8 @@
       <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/app/lib/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="32" column="63" lean-forward="false" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+            <state relative-caret-position="291">
+              <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -132,7 +124,6 @@
         <option value="$PROJECT_DIR$/server/app/lib/function.php" />
         <option value="$PROJECT_DIR$/server/app/lib/example_Response.php" />
         <option value="$PROJECT_DIR$/server/app/lib/Response.php" />
-        <option value="$PROJECT_DIR$/server/app/lib/RestServer.php" />
         <option value="$PROJECT_DIR$/server/app/models/ModelPayment.php" />
         <option value="$PROJECT_DIR$/server/api/payment/index.php" />
         <option value="$PROJECT_DIR$/server/api/ordersfullinfo/index.php" />
@@ -159,18 +150,19 @@
         <option value="$PROJECT_DIR$/server/app/models/ModelClients.php" />
         <option value="$PROJECT_DIR$/server/app/lib/config.php" />
         <option value="$PROJECT_DIR$/server/api/booktoauthor/.htaccess" />
-        <option value="$PROJECT_DIR$/server/api/booktoauthor/index.php" />
-        <option value="$PROJECT_DIR$/server/app/models/ModelBooktoauthor.php" />
         <option value="$PROJECT_DIR$/server/api/booktogenre/.htaccess" />
         <option value="$PROJECT_DIR$/server/app/models/ModelBooktogener.php" />
-        <option value="$PROJECT_DIR$/server/api/booktogenre/index.php" />
-        <option value="$PROJECT_DIR$/server/app/models/ModelBooktogenre.php" />
         <option value="$PROJECT_DIR$/server/api/historybook/.htaccess" />
         <option value="$PROJECT_DIR$/server/api/historybook/index.php" />
         <option value="$PROJECT_DIR$/server/app/models/ModelHistorybook.php" />
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/server/api/books/index.php" />
         <option value="$PROJECT_DIR$/server/app/models/ModelBooks.php" />
+        <option value="$PROJECT_DIR$/server/app/lib/RestServer.php" />
+        <option value="$PROJECT_DIR$/server/app/models/ModelBooktogenre.php" />
+        <option value="$PROJECT_DIR$/server/api/booktogenre/index.php" />
+        <option value="$PROJECT_DIR$/server/app/models/ModelBooktoauthor.php" />
+        <option value="$PROJECT_DIR$/server/api/booktoauthor/index.php" />
       </list>
     </option>
   </component>
@@ -311,6 +303,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="historybook" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookShop" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="genres" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookShop" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cart" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -554,12 +590,12 @@
       <workItem from="1508474802566" duration="6275000" />
       <workItem from="1508498599269" duration="6713000" />
       <workItem from="1508555590275" duration="16295000" />
-      <workItem from="1508641999005" duration="15040000" />
+      <workItem from="1508641999005" duration="24514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140406000" />
+    <option name="totallyTimeSpent" value="149880000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -710,14 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/lib/RestServer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/api/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -782,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/api/cart/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/api/authors/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
@@ -797,32 +817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/models/ModelGenres.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="78" column="35" lean-forward="false" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
-          <folding>
-            <marker date="1508563137681" expanded="true" signature="108:135" ph="SELECT id, n... genres" />
-            <marker date="1508563137681" expanded="true" signature="946:995" ph="INSERT INTO authors... " />
-            <marker date="1508563137681" expanded="true" signature="1706:1748" ph="UPDATE genre... " />
-            <marker date="1508563137681" expanded="true" signature="2329:2370" ph="DELETE FROM " />
-            <marker date="1508563137681" expanded="true" signature="2449:2477" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bookShop.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="371" column="12" lean-forward="false" selection-start-line="371" selection-start-column="6" selection-end-line="371" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/lib/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="32" column="63" lean-forward="false" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -882,67 +880,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/models/ModelCart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
-          <folding>
-            <marker date="1508335900874" expanded="true" signature="1002:1059" ph="DELETE FROM " />
-            <marker date="1508335900874" expanded="true" signature="1330:1403" ph="UPDATE cart " />
-            <marker date="1508335900874" expanded="true" signature="1837:1900" ph="SELECT count... cart" />
-            <marker date="1508335900874" expanded="true" signature="2015:2107" ph="INSERT INTO cart... " />
-            <marker date="1508335900874" expanded="true" signature="2388:2461" ph="UPDATE cart " />
-            <marker date="1508335900874" expanded="true" signature="2754:2787" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/api/genres/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/api/booktoauthor/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="53" lean-forward="false" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/api/booktogenre/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="52" lean-forward="false" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/api/booktogenre/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/models/ModelBooktogenre.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="61" lean-forward="false" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
-          <folding>
-            <marker date="1508673478807" expanded="true" signature="392:610" ph="INSERT INTO book_to_gener... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/api/booktoauthor/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="51" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -952,25 +893,6 @@
         <state relative-caret-position="34">
           <caret line="2" column="52" lean-forward="false" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/models/ModelBooktoauthor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="29" selection-end-column="9" />
-          <folding>
-            <marker date="1508671881160" expanded="true" signature="396:422" ph="INSERT INTO book_to_author... " />
-            <marker date="1508671881160" expanded="true" signature="396:448" ph="INSERT INTO book_to_author... " />
-            <marker date="1508671881160" expanded="true" signature="396:539" ph="INSERT INTO book_to_author... " />
-            <marker date="1508671881160" expanded="true" signature="396:548" ph="INSERT INTO book_to_author... " />
-            <marker date="1508671881160" expanded="true" signature="396:581" ph="INSERT INTO book_to_author... " />
-            <marker date="1508671881160" expanded="true" signature="396:582" ph="INSERT INTO book_to_author... " />
-            <marker date="1508671881160" expanded="true" signature="396:583" ph="INSERT INTO book_to_author... " />
-            <marker date="1508671881160" expanded="true" signature="396:616" ph="INSERT INTO book_to_author... " />
-            <marker date="1508671881160" expanded="true" signature="396:617" ph="INSERT INTO book_to_author... " />
-            <marker date="1508671881160" expanded="true" signature="396:618" ph="INSERT INTO book_to_author... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1018,41 +940,159 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/api/books/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="60" column="36" lean-forward="true" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+        <state relative-caret-position="444">
+          <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/models/ModelGenres.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="19" selection-end-column="21" />
+          <folding>
+            <marker date="1508563137681" expanded="true" signature="108:135" ph="SELECT id, n... genres" />
+            <marker date="1508563137681" expanded="true" signature="946:995" ph="INSERT INTO authors... " />
+            <marker date="1508563137681" expanded="true" signature="1706:1748" ph="UPDATE genre... " />
+            <marker date="1508563137681" expanded="true" signature="2329:2370" ph="DELETE FROM " />
+            <marker date="1508563137681" expanded="true" signature="2449:2477" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/api/booktogenre/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="52" lean-forward="false" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/api/genres/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="64" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/lib/RestServer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="118" column="14" lean-forward="false" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/api/cart/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="63" column="1" lean-forward="false" selection-start-line="63" selection-start-column="1" selection-end-line="71" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/models/ModelCart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="90" selection-end-column="23" />
+          <folding>
+            <marker date="1508335900874" expanded="true" signature="1002:1059" ph="DELETE FROM " />
+            <marker date="1508335900874" expanded="true" signature="1330:1403" ph="UPDATE cart " />
+            <marker date="1508335900874" expanded="true" signature="1837:1900" ph="SELECT count... cart" />
+            <marker date="1508335900874" expanded="true" signature="2015:2107" ph="INSERT INTO cart... " />
+            <marker date="1508335900874" expanded="true" signature="2388:2461" ph="UPDATE cart " />
+            <marker date="1508335900874" expanded="true" signature="2754:2787" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/app/models/ModelBooks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="215" column="28" lean-forward="false" selection-start-line="215" selection-start-column="28" selection-end-line="215" selection-end-column="28" />
+        <state relative-caret-position="359">
+          <caret line="269" column="38" lean-forward="false" selection-start-line="269" selection-start-column="38" selection-end-line="269" selection-end-column="38" />
           <folding>
-            <marker date="1508677582532" expanded="true" signature="6789:6806" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:6832" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7047" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7049" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7058" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7081" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7090" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7091" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7092" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7123" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7124" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7125" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7162" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7163" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7164" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7198" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7199" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7200" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7232" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7233" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7234" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7263" ph="INSERT INTO books... " />
-            <marker date="1508677582532" expanded="true" signature="6789:7264" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:6806" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:6832" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7047" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7049" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7058" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7081" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7090" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7091" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7092" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7123" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7124" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7125" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7162" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7163" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7164" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7198" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7199" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7200" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7232" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7233" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7234" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7263" ph="INSERT INTO books... " />
+            <marker date="1508685683745" expanded="true" signature="6789:7264" ph="INSERT INTO books... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/lib/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/api/booktogenre/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="51" column="45" lean-forward="true" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/models/ModelBooktogenre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+          <folding>
+            <marker date="1508691014047" expanded="true" signature="110:153" ph="SELECT id_bo... book_to_genre" />
+            <marker date="1508691014047" expanded="true" signature="918:1136" ph="INSERT INTO book_to_gener... " />
+            <marker date="1508691014047" expanded="true" signature="1774:1814" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/models/ModelBooktoauthor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding>
+            <marker date="1508692260218" expanded="true" signature="111:156" ph="SELECT id_bo... book_to_author" />
+            <marker date="1508692260218" expanded="true" signature="924:950" ph="INSERT INTO book_to_author... " />
+            <marker date="1508692260218" expanded="true" signature="924:976" ph="INSERT INTO book_to_author... " />
+            <marker date="1508692260218" expanded="true" signature="924:1067" ph="INSERT INTO book_to_author... " />
+            <marker date="1508692260218" expanded="true" signature="924:1076" ph="INSERT INTO book_to_author... " />
+            <marker date="1508692260218" expanded="true" signature="924:1109" ph="INSERT INTO book_to_author... " />
+            <marker date="1508692260218" expanded="true" signature="924:1110" ph="INSERT INTO book_to_author... " />
+            <marker date="1508692260218" expanded="true" signature="924:1111" ph="INSERT INTO book_to_author... " />
+            <marker date="1508692260218" expanded="true" signature="924:1144" ph="INSERT INTO book_to_author... " />
+            <marker date="1508692260218" expanded="true" signature="924:1145" ph="INSERT INTO book_to_author... " />
+            <marker date="1508692260218" expanded="true" signature="924:1146" ph="INSERT INTO book_to_author... " />
+            <marker date="1508692260218" expanded="true" signature="1783:1824" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/api/booktoauthor/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -138,4 +138,78 @@ class ModelBooks extends ModelDB
         $arr = array_values($arr);
         return $arr;
     }
+
+    public function addBook($param)
+    {
+        if (isset($param['hash']) && isset($param['id_client']))
+        {
+            if ($this->checkData($param) == 'admin')
+            {
+                //Validate all fields - not empty
+                if (empty($param['title']) || empty($param['price']) || empty($param['description'])
+                    || empty($param['active']) || empty($param['img']))
+                {
+                    return ERR_FIELDS;
+                }
+                //Discount
+                if (filter_var($param['discount'], FILTER_VALIDATE_INT) || filter_var($param['discount'],FILTER_VALIDATE_FLOAT)
+                    || $param['discount'] == '0' || $param['discount'] == '0.00')
+                {
+                    if ((int)$param['discount'] < 0 || (int)$param['discount'] > 99)
+                    {
+                        return ERR_DISC_INC;
+                    }
+                    $discount = $this->pdo->quote($param['discount']);
+                }
+                else
+                {
+                    return ERR_DISC;
+                }
+                //Price
+                if (filter_var($param['price'], FILTER_VALIDATE_INT) || filter_var($param['price'],FILTER_VALIDATE_FLOAT)
+                    || $param['price'] === '0' || $param['price'] === '0.00')
+                {
+                    if ((int)$param['price'] < 0)
+                    {
+                        return ERR_PRICE;
+                    }
+                    $price = $this->pdo->quote($param['price']);
+                }
+                else
+                {
+                    return ERR_PRICE;
+                }
+                $title = $this->pdo->quote($param['title']);
+                $description = $this->pdo->quote($param['description']);
+                $active = $this->pdo->quote($param['active']);
+                $img = $this->pdo->quote($param['img']);
+                $sql = 'INSERT INTO books'
+                    .' ('
+                    .'title,'
+                    .' price,'
+                    .' description,'
+                    .' discount,'
+                    .' active,'
+                    .' img'
+                    .') VALUES ('
+                    .$title.', '
+                    .$price.', '
+                    .$description.', '
+                    .$discount.', '
+                    .$active.', '
+                    .$img.')';
+                $this->execQuery($sql);
+                $result['id_book'] = $this->pdo->lastInsertId();
+                return $result;
+            }
+            else
+            {
+                return ERR_ACCESS;
+            }
+        }
+        else
+        {
+            return ERR_ACCESS;
+        }
+    }
 }

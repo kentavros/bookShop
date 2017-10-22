@@ -84,10 +84,13 @@ class ModelClients extends ModelDB
     {
         if ($this->checkData($param) == 'admin')
         {
-
             if (filter_var($param['discount'], FILTER_VALIDATE_INT) || filter_var($param['discount'],FILTER_VALIDATE_FLOAT)
             || $param['discount'] === '0' || $param['discount'] === '0.00')
             {
+                if ((int)$param['discount'] < 0 || (int)$param['discount'] > 99)
+                {
+                    return ERR_DISC_INC;
+                }
                 $discount = $this->pdo->quote($param['discount']);
             }
             else

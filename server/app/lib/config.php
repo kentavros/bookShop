@@ -18,7 +18,7 @@ define('PASS', 'tuser6');
 define('ERR_DB', 'Error connecting to DB');
 define('ERR_QUERY', 'Error query to DB');
 //define('ERR_PARAMS', 'Error - missing year parameter! Fill out the required field "Year"');
-//define('ERR_FIELDS', 'Error - some fields are empty!');
+define('ERR_FIELDS', 'Error - some fields are empty!');
 //define('ERR_PAY', 'Field payment must be "cash" or "credit_card"');
 define('ERR_SEARCH', 'Nothing found');
 define('ERR_LOGIN', 'This login exists');
@@ -31,6 +31,8 @@ define('ERR_DATA', 'Error, Missing data!');
 define('ERR_ACCESS', 'Access denied!');
 define('AUTHOR_EXIST', 'Author exists!');
 define('ERR_DISC', 'Field "discount" should be float or integer');
+define('ERR_PRICE', 'Field "pricet" should be float or integer and not "0"');
+define('ERR_DISC_INC', 'Incorrect data of the discount field');
 
 /**
  * Success

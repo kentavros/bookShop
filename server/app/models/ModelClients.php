@@ -111,13 +111,8 @@ class ModelClients extends ModelDB
                 $pass = $this->pdo->quote($pass);
                 $sql .=', pass='.$pass;
             }
-//            exit();
             $sql .=' WHERE id='.$id;
-//            dump($sql);
-//            dump($pass);
             $data = $this->execQuery($sql);
-//            dump($data);
-//            exit();
             return $data;
         }
         else

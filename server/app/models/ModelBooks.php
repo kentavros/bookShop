@@ -212,4 +212,10 @@ class ModelBooks extends ModelDB
             return ERR_ACCESS;
         }
     }
+
+    public function editBook($param)
+    {
+        dump($param);
+        exit();
+    }
 }

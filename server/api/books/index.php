@@ -50,5 +50,18 @@ class Books extends RestServer
             return $this->response->serverError(500, $exception->getMessage());
         }
     }
+
+    public function putBooks($param)
+    {
+        try
+        {
+            $result = $this->model->editBook($param);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
+    }
 }
 $books = new Books();

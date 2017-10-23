@@ -50,5 +50,19 @@ class Orders extends RestServer
             return $this->response->serverError(500, $exception->getMessage());
         }
     }
+
+    public function putOrders($param)
+    {
+        try
+        {
+            $result = $this->model->updateStatus($param);
+            $result = $this->encodedData($result);
+            return $this->response->serverSuccess(200, $result);
+        }
+        catch (Exception $exception)
+        {
+            return $this->response->serverError(500, $exception->getMessage());
+        }
+    }
 }
 $books = new Orders();

@@ -103,4 +103,27 @@ class ModelOrders extends ModelDB
         $result['id_order'] = $this->pdo->lastInsertId();
         return $result;
     }
+
+    public function updateStatus($param)
+    {
+        if (isset($param['hash']) && isset($param['id_client']))
+        {
+            if ($this->checkData($param) == 'admin')
+            {
+                $idOrder = $this->pdo->quote($param['id_order']);
+                $status = $this->pdo->quote($param['status']);
+                $sql = 'UPDATE orders SET status='.$status.' WHERE id='.$idOrder;
+                $result = $this->execQuery($sql);
+                return $result;
+            }
+            else
+            {
+                return ERR_ACCESS;
+            }
+        }
+        else
+        {
+            return ERR_ACCESS;
+        }
+    }
 }

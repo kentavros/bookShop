@@ -4,6 +4,7 @@ class ModelOrders extends ModelDB
     public function getOrders($param = false)
     {
         $sql = 'SELECT o.id as id_order,'
+            .' c.first_name as client_name,'
             .' o.discount_client,'
             .' o.status,'
             .' o.total_discount,'
@@ -19,7 +20,9 @@ class ModelOrders extends ModelDB
             .' LEFT JOIN orders_full_info of'
             .' ON o.id=of.id_order'
             .' LEFT JOIN payment p'
-            .' ON o.id_payment=p.id';
+            .' ON o.id_payment=p.id'
+            .' LEFT JOIN clients c'
+            .' ON o.id_client=c.id';
         if ($param !== false)
         {
             if (is_array($param))

@@ -1,5 +1,6 @@
 <?php
 include '../../app/lib/function.php';
+//include '../../server/app/lib/function.php';
 class Authors extends RestServer
 {
     private $model;
@@ -77,4 +78,4 @@ class Authors extends RestServer
         }
     }
 }
-$books = new Authors();
+$authors = new Authors();

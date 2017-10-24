@@ -215,8 +215,6 @@ class ModelBooks extends ModelDB
 
     public function editBook($param)
     {
-//        dump($param);
-//        exit();
         if (isset($param['hash']) && isset($param['id_client']))
         {
             if ($this->checkData($param) == 'admin')

@@ -39,6 +39,10 @@ class ModelAuthors extends ModelDB
                 }
                 return $data;
             }
+            else
+            {
+                return false;
+            }
         }
         else
         {
@@ -60,6 +64,10 @@ class ModelAuthors extends ModelDB
                     $result = $this->execQuery($sql);
                     return $result;
                 }
+            }
+            else
+            {
+                return false;
             }
         }
         else

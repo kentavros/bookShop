@@ -62,4 +62,4 @@ class Booktoauthor extends RestServer
         }
     }
 }
-$books = new Booktoauthor();
+$booksToAuthor = new Booktoauthor();

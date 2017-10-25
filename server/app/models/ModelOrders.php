@@ -87,7 +87,6 @@ class ModelOrders extends ModelDB
 
     public function addToOrders($param)
     {
-//        date_default_timezone_set('Europe/Kiev');
         if (empty($param))
         {
             throw new Exception(ERR_DATA);

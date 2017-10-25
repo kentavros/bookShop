@@ -27,7 +27,6 @@ class ModelOrdersfullinfo extends ModelDB
 
     public function addToOrdersfullinfo($param)
     {
-        date_default_timezone_set('Europe/Kiev');
         if (empty($param))
         {
             throw new Exception(ERR_DATA);
@@ -38,8 +37,6 @@ class ModelOrdersfullinfo extends ModelDB
         $count = $this->pdo->quote($param['count']);
         $price = $this->pdo->quote($param['price']);
         $discount_book = $this->pdo->quote($param['discount_book']);
-        //$discount_client = $this->pdo->quote($param['discount_client']);
-
         $sql = "INSERT INTO orders_full_info"
             ." (id_order,"
             ." id_book,"

@@ -12,7 +12,7 @@ class Booktogenre extends RestServer
      */
     public function __construct()
     {
-        $this->model = new ModelBooktogenre();
+        $this->model = new ModelBooktogenreTest();
         $this->response = new Response();
         $this->run();
     }

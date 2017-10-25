@@ -40,6 +40,12 @@ class ModelBooksTest extends PHPUnit_Framework_TestCase
         $this->pdo->execQuery('DELETE FROM books WHERE id='.$id_book);
     }
 
+    public function testGetBooksException()
+    {
+        $this->setExpectedException(Exception::class);
+        $result=$this->modelBooks->getBooks(['i d'=>'0']);
+    }
+
     public function testGetBooksAllDataAccessDenied()
     {
         $result = $this->modelBooks->getBooks(['hash'=>0, 'id_client'=>'2']);
@@ -419,22 +425,4 @@ class ModelBooksTest extends PHPUnit_Framework_TestCase
         $this->pdo->execQuery('DELETE FROM clients WHERE id='.$id_user);
         $this->pdo->execQuery('DELETE FROM books WHERE id='.$id_book);
     }
-
-//    public function testAddBookTrue()
-//    {
-//        $this->pdo->execQuery('INSERT INTO clients(first_name, last_name, login, pass, discount, hash, role, active) VALUES ("test","test","test","test","1","test","admin","yes")');
-//        $id_user = $this->pdo->getPdo()->lastInsertId();
-//        $result = $this->modelBooks->addBook(['hash'=>'test', 'id_client'=>$id_user,
-//            'title'=>'test',
-//            'price'=>'1',
-//            'description'=>'test',
-//            'active'=>'yes',
-//            'img'=>'test',
-//            'discount'=>'1'
-//        ]);
-//        $this->assertInternalType('array', $result);
-//        $this->assertTrue(count($result) > 0);
-//        $this->pdo->execQuery('DELETE FROM clients WHERE id='.$id_user);
-//        $this->pdo->execQuery('DELETE FROM books WHERE id='.$result['id_book']);
-//    }
 }

@@ -70,4 +70,4 @@ class Clients extends RestServer
         }
     }
 }
-$books = new Clients();
+$clients = new Clients();

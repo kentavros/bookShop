@@ -7,8 +7,8 @@ define('ENCODE_DEFAULT', '.json');
 /**
  * for Data Base MySQL
  */
-define('DSN_MY', 'mysql:host=localhost;dbname=bookShop');
-//define('DSN_MY', 'mysql:host=localhost;dbname=user6');
+//define('DSN_MY', 'mysql:host=localhost;dbname=bookShop');
+define('DSN_MY', 'mysql:host=localhost;dbname=user6');
 define('USER_NAME', 'user6');
 define('PASS', 'tuser6');
 
